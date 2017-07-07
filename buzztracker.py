@@ -13,9 +13,19 @@ class buzztracker(object):
         # eg, skills['python] = ['TDD', 'dictionaries', 'lists']
         #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
-    def skills_studied(self,skills):
+    def skills_completed(self,skills):
+        print('Please enter Yes/No for skills you have studied:')
+        for topics, skill in skills.items:
+            for value in skill:
+                user_input = input(value)
+                if user_input == 'Yes': 
+                    self.skills_studied[topics] = value
+                else:
+                    pass
+        
+        return skills_studied
 
-        pass
+       
 
     def view_skills_studied(self,skills):
         pass
@@ -96,12 +106,6 @@ class buzztracker(object):
             print("This topic already exists")
         else:
             self.skills[topic] = []
-
-    def view_topics_added (self) :
-        topics = self.skills
-
-        for topic in topics.keys() :
-            print (topic)
 
 
     def display_menu():
