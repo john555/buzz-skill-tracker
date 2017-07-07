@@ -74,13 +74,12 @@ class BuzzTracker(object):
         else:
             self.skills[topic] = []
 
-<<<<<<< HEAD
-=======
     def view_topics_added (self) :
-        topics = self.skills
+        topics = self.skills;
+        ## Print out topics added. 
+        print (*topics.keys() , sep=', ')
 
-        for topic in topics.keys() :
-            print (topic)
+        
 
 if __name__ == "__main__":
     track =  BuzzTracker()
@@ -93,7 +92,6 @@ if __name__ == "__main__":
     print ('4. Show the Progress of the skills.')
     print ('5. Exit the menu.')
     choice = input('Enter the choice from the menu: 1-5')
->>>>>>> 219d9f417bec1c8d778c7ad36399168f8bc7df0b
 
     if choice == 0:
         track.add_topic()
