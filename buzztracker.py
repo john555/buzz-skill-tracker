@@ -1,7 +1,7 @@
 import store
 
 def main():
-    store = store.Store()
+    _store = store.Store()
     
     print(15 * '-', "-MENU" ,15 * '-')
     print('0. Add a topic')
