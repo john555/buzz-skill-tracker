@@ -14,6 +14,7 @@ class buzztracker(object):
         #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
     def skills_completed(self,skills):
+        """ Function to check and mark completed skills """
         print('Please enter Yes/No for skills you have studied:')
         for topics, skill in skills.items:
             for value in skill:
