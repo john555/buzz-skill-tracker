@@ -5,42 +5,43 @@ class BuzzTracker(object):
         self.skills_studied = {}
 
     def add_skills(self):
-        topic = input("Enter the name of topic") #eg python
-        skill = input("Enter the subsection of that topic") #dictionaries, lists, TDD
+        add_Topic = True
+        while add_Topic:
+            topic = input("Please enter the name of topic you would like to learn. press, No if there are no more"
+                          "Topics you want to add: ")  # eg python
+            if topic == 'No':
+                add_Topic = False
+            else:
+                self.skills[topic] = []
+                loop = True
+                while loop:
+                    skill = input("Please enter a subtopic of the topic you would like to learn. press, No if there are no more"
+                                  "subtopics to be added:  ") #dictionaries, lists, TDD
+                    if skill == 'No':
+                        loop = False
+                    else:
+                        self.skills[topic].append(skill)
+                        print (self.skills)
 
-        self.skills = {}#the empty dictionary is populated by the topic and subsections
+        return self.skills #self.skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
-        # eg, skills['python] = ['TDD', 'dictionaries', 'lists']
-        #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
+    def skills_completed(self):
 
-    def skills_completed(self,skills):
-        """ Function to check and mark completed skills """
-        print('Please enter Yes/No for skills you have studied:')
-        for topics, skill in skills.items:
-            for value in skill:
-                user_input = input(value)
-                if user_input == 'Yes': 
-                    self.skills_studied[topics] = value
-                else:
-                    pass
+        print('Please enter Y/N for skills you have studied: ')
+        for topic, skill in self.skills.items():
+            if topic not in self.skills_studied:
+                self.skills_studied[topic] = []
+                #print (topic, skill)
+                for value in skill:
+                    user_input = input(topic + ', '+ value + ': ' )
+                    if user_input == 'Y':
+                        self.skills_studied[topic].append(value)
+                    else:
+                        pass
+        print (self.skills_studied)
         
-        return skills_studied
+        return self.skills_studied
 
-       
-
-    def view_skills_studied(self,skills):
-        pass
-
-    def view_skills_not_studied(self,skills):
-        pass
-
-        pass
-
-    def view_skills_studied(self):
-        pass
-
-    def view_skills_not_studied(self):
-        pass
 
     def progress(self):
         for item in self.skills:
@@ -61,62 +62,16 @@ class BuzzTracker(object):
                         if i not in self.skills_studied[item]:
                             print (i)
 
-    def add_topic(self):
-        topic = input("Enter a topic: ")
-
-        # Checking whether the input is not blank
-        if topic.strip() == '':
-            print("The topic cannot be blank")
-
-        # Checking whether the topic already exists
-        if topic in self.skills.keys():
-            print("This topic already exists")
-        else:
-            self.skills[topic] = []
-
-<<<<<<< HEAD
-=======
-    def view_topics_added (self) :
-        topics = self.skills
-
-        for topic in topics.keys() :
-            print (topic)
-
-    def view_added_skills(self):
-        for key, value in self.skills.items():
-            print(self.skills)
-
 if __name__ == "__main__":
     track =  BuzzTracker()
     print (30 * '-')
-    print ('Enter: ')
-    print ('0 to Add a topic ')
-    print ('1.add skills to the tracker ')
-    print ('2.show skills that are studied ')
-    print ('3. view skills not studied')
-    print ('4. Show the Progress of the skills.')
-    print ('5. Exit the menu.')
-    choice = input('Enter the choice from the menu: 1-5')
->>>>>>> 219d9f417bec1c8d778c7ad36399168f8bc7df0b
 
-    if choice == 0:
-        track.add_topic()
-    elif choice == 1:
-        track.add_skills()
+    track.add_skills()
+    print (30 * '-')
+    track.skills_completed()
+    print (30 * '-')
+    track.progress()
 
-    elif choice == 2:
-        track.view_skills_studied()
-
-    elif choice == 3:
-        track.view_skills_not_studied()
-
-    elif choice == 4:
-        track.progress()
-
-    elif choice == 6:
-        print('To exit, press ctr + c ')
-    else:
-        print ("Wrong input. Enter one of the options to try again.")
 
 
 
