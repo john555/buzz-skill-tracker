@@ -10,6 +10,9 @@ class buzztracker(object):
             # eg, skills['python] = ['TDD', 'dictionaries', 'lists']
             #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
+        def view_topics_added (self, skills) :
+            
+
         def skills_studied(self,skills):
 
         def view_skills_studied(self,skills):
