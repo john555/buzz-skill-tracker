@@ -63,16 +63,16 @@ class BuzzTracker(object):
 
 if __name__ == "__main__":
     track =  BuzzTracker()
-    print (30 * '-')
+    print (10 * '-',"Welcome to the Buzz project Tracker.",10*'-' ) #updated the menu to work appropriately.
     print ('Enter: ')
     print ('0 to Add a topic ')
     print ('1.add skills to the tracker ')
     print ('2.show skills that are studied ')
     print ('3. view skills not studied')
     print ('4. Show the Progress of the skills.')
-    print ('5. Exit the menu.')
-    print ('7. View topics added.')
-    choice = input('Enter the choice from the menu: 1-5')
+    print ('5. View topics added.')
+    print ('6. Exit the menu.')
+    choice = int(input('Enter the choice from the menu: 1-5: ')) #updated the input value to return an int.
 
     if choice == 0:
         track.add_topic()
@@ -88,12 +88,15 @@ if __name__ == "__main__":
     elif choice == 4:
         track.progress()
 
-    elif choice == 6:
-        print('To exit, press ctr + c ')
-    else:
-        print ("Wrong input. Enter one of the options to try again.")
+    elif choice == 5:
+        track.view_topics_added()       #the numbering of the files was off just updated that.
     
-    else choice == 7:
-        track.view_topics_added()
+    elif choice==6:
+        print('Print exiting the menu')
+        exit()
+
+    else:
+        print("Input a correct number.")
+
 
 
