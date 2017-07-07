@@ -55,6 +55,12 @@ class BuzzTracker(object):
         else:
             self.skills[topic] = []
 
+    def view_topics_added (self) :
+        topics = self.skills
+
+        for topic in topics.keys() :
+            print (topic)
+
 if __name__ == "__main__":
     track =  BuzzTracker()
     print (30 * '-')
@@ -85,5 +91,6 @@ if __name__ == "__main__":
         print('To exit, press ctr + c ')
     else:
         print ("Wrong input. Enter one of the options to try again.")
+
 
 
