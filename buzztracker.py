@@ -1,5 +1,5 @@
 class BuzzTracker(object):
-
+    
     def __init__(self):
         self.skills = {} #skills is a dictionary which contains topics as keys and skills as values
         self.skills_studied = {}
@@ -71,6 +71,7 @@ if __name__ == "__main__":
     print ('3. view skills not studied')
     print ('4. Show the Progress of the skills.')
     print ('5. Exit the menu.')
+    print ('7. View topics added.')
     choice = input('Enter the choice from the menu: 1-5')
 
     if choice == 0:
@@ -91,6 +92,8 @@ if __name__ == "__main__":
         print('To exit, press ctr + c ')
     else:
         print ("Wrong input. Enter one of the options to try again.")
-
+    
+    else choice == 7:
+        track.view_topics_added()
 
 
