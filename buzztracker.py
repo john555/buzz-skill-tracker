@@ -1,33 +1,14 @@
 class buzztracker(object):
     def __init__(self,skills):
-        #self.skills=skills
-        #x=''
-        #y=[]
-        #self.skills={'name':x,'skills':y}
+        self.skills = skills #skills is a dictionary which contains topics as keys and skills as values
 
-           
-                
+        def add_skills(self):
+            topic=input("Enter the name of topic") #eg python
+            skill=input("Enter the subsection of that topic") #dictionaries, lists, TDD
 
-
-
-
-        def add_skills(self,skills):
-            name=input("Enter the name of skill")
-            topic=input("Enter topic to be done")
-
-
-            skills={name:'',
-                    status_completion:False
-                            }
-           data=[{
-               "topic1":"",
-               skills:[skills,skills,skills]
-
-               "topic2":'',
-               skills:[skills,skills,skills]
-               "topic3":"",
-               skills:[skills,skills,skills]
-           }]
+            skills = {}#the empty dictionary is populated by the topic and subsections
+            # eg, skills['python] = ['TDD', 'dictionaries', 'lists']
+            #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
         def skills_studied(self,skills):
 
