@@ -1,5 +1,5 @@
 class buzztracker(object):
-
+    
     def __init__(self,skills, skills_studied):
         self.skills = skills #skills is a dictionary which contains topics as keys and skills as values
         self.skills_studied = skills_studied
@@ -14,13 +14,9 @@ class buzztracker(object):
         #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
     def skills_studied(self,skills):
-<<<<<<< HEAD
-    
-=======
 
         pass
 
->>>>>>> 36dd28924679279051219b1d41c6cd5f913d1aba
     def view_skills_studied(self,skills):
         pass
 
@@ -100,6 +96,12 @@ class buzztracker(object):
             print("This topic already exists")
         else:
             self.skills[topic] = []
+
+    def view_topics_added (self) :
+        topics = self.skills
+
+        for topic in topics.keys() :
+            print (topic)
 
 
     def display_menu():
