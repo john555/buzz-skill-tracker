@@ -5,8 +5,8 @@ class BuzzTracker(object):
         self.skills_studied = {}
 
     def add_skills(self):
-        topic=input("Enter the name of topic") #eg python
-        skill=input("Enter the subsection of that topic") #dictionaries, lists, TDD
+        topic = input("Enter the name of topic") #eg python
+        skill = input("Enter the subsection of that topic") #dictionaries, lists, TDD
 
         self.skills = {}#the empty dictionary is populated by the topic and subsections
 
@@ -60,6 +60,10 @@ class BuzzTracker(object):
 
         for topic in topics.keys() :
             print (topic)
+
+    def view_added_skills(self):
+        for key, value in self.skills.items():
+            print(self.skills)
 
 if __name__ == "__main__":
     track =  BuzzTracker()
