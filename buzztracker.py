@@ -1,8 +1,8 @@
-class buzztracker(object):
-    
-    def __init__(self,skills, skills_studied):
-        self.skills = skills #skills is a dictionary which contains topics as keys and skills as values
-        self.skills_studied = skills_studied
+class BuzzTracker(object):
+
+    def __init__(self):
+        self.skills = {} #skills is a dictionary which contains topics as keys and skills as values
+        self.skills_studied = {}
 
     def add_skills(self):
         topic=input("Enter the name of topic") #eg python
@@ -13,6 +13,7 @@ class buzztracker(object):
         # eg, skills['python] = ['TDD', 'dictionaries', 'lists']
         #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
+<<<<<<< HEAD
     def skills_completed(self,skills):
         """ Function to check and mark completed skills """
         print('Please enter Yes/No for skills you have studied:')
@@ -33,47 +34,16 @@ class buzztracker(object):
 
     def view_skills_not_studied(self,skills):
         pass
+=======
+    def skills_studied(self):
+>>>>>>> 219d9f417bec1c8d778c7ad36399168f8bc7df0b
 
-    def progress(self):
         pass
 
-    def display_menu(self):
-        print 30*'-',MENU ,30 * '-'
-        print '0. Add a topic'
-        print '1.add skills to the tracker '
-        print '2.show skills that are studied '
-        print '3.view skills studied. '
-        print '4. view skills not studied'
-        print '5. Show the Progress of the skills.'
-        print '6. Exit the menu.'
-
-        loop=True
-
-        while loop:
-            choice=input('Enter the choice from the menu: 1-5')
-
-            if choice==0:
-                add_topic()
-            if choice==1:
-                add_skills()
-
-            if choice==2:
-                skills_studied()
-
-            if choice==3:
-                view_skills_studied()
-
-            if choice==4:
-                view_skills_not_studied()
-
-            if choice==5:
-                progress()
-
-
-    def view_skills_studied(self,skills):
+    def view_skills_studied(self):
         pass
 
-    def view_skills_not_studied(self,skills):
+    def view_skills_not_studied(self):
         pass
 
     def progress(self):
@@ -108,46 +78,45 @@ class buzztracker(object):
         else:
             self.skills[topic] = []
 
+<<<<<<< HEAD
+=======
+    def view_topics_added (self) :
+        topics = self.skills
 
-    def display_menu():
-        print 30*'-',MENU ,30 * '-'
-        print '0. Add a topic'
-        print '1.add skills to the tracker '
-        print '2.show skills that are studied '
-        print '3.view skills studied. '
-        print '4. view skills not studied'
-        print '5. Show the Progress of the skills.'
-        print '6. Exit the menu.'
+        for topic in topics.keys() :
+            print (topic)
 
-        loop=True
+if __name__ == "__main__":
+    track =  BuzzTracker()
+    print (30 * '-')
+    print ('Enter: ')
+    print ('0 to Add a topic ')
+    print ('1.add skills to the tracker ')
+    print ('2.show skills that are studied ')
+    print ('3. view skills not studied')
+    print ('4. Show the Progress of the skills.')
+    print ('5. Exit the menu.')
+    choice = input('Enter the choice from the menu: 1-5')
+>>>>>>> 219d9f417bec1c8d778c7ad36399168f8bc7df0b
 
-        while loop:
-            display_menu()
-            choice=input('Enter the choice from the menu: 1-5')
+    if choice == 0:
+        track.add_topic()
+    elif choice == 1:
+        track.add_skills()
 
-            if choice==0:
-                add_topic()
-            if choice==1:
-                add_skills()
+    elif choice == 2:
+        track.view_skills_studied()
 
-            if choice==2:
-                skills_studied()
+    elif choice == 3:
+        track.view_skills_not_studied()
 
-            if choice==3:
-                view_skills_studied()
+    elif choice == 4:
+        track.progress()
 
-            if choice==4:
-                view_skills_not_studied()
-                
-            if choice==5:
-                progress()
+    elif choice == 6:
+        print('To exit, press ctr + c ')
+    else:
+        print ("Wrong input. Enter one of the options to try again.")
 
 
-            if choice==6:
-                print('Exiting the menu')
-                return
-            else:
-                raw_input=("Wrong input. Enter one of the options to try again.")
-
-                raw_input=("Wrong input. Enter one of the options to try again.")
 
