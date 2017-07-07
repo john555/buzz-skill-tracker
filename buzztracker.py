@@ -1,5 +1,5 @@
 class BuzzTracker(object):
-
+    
     def __init__(self):
         self.skills = {} #skills is a dictionary which contains topics as keys and skills as values
         self.skills_studied = {}
@@ -13,7 +13,26 @@ class BuzzTracker(object):
         # eg, skills['python] = ['TDD', 'dictionaries', 'lists']
         #skills becomes skills = {'python': ['TDD', 'dictionaries', 'lists'], .... and others}
 
-    def skills_studied(self):
+    def skills_completed(self,skills):
+        """ Function to check and mark completed skills """
+        print('Please enter Yes/No for skills you have studied:')
+        for topics, skill in skills.items:
+            for value in skill:
+                user_input = input(value)
+                if user_input == 'Yes': 
+                    self.skills_studied[topics] = value
+                else:
+                    pass
+        
+        return skills_studied
+
+       
+
+    def view_skills_studied(self,skills):
+        pass
+
+    def view_skills_not_studied(self,skills):
+        pass
 
         pass
 
@@ -55,6 +74,8 @@ class BuzzTracker(object):
         else:
             self.skills[topic] = []
 
+<<<<<<< HEAD
+=======
     def view_topics_added (self) :
         topics = self.skills
 
@@ -76,6 +97,7 @@ if __name__ == "__main__":
     print ('4. Show the Progress of the skills.')
     print ('5. Exit the menu.')
     choice = input('Enter the choice from the menu: 1-5')
+>>>>>>> 219d9f417bec1c8d778c7ad36399168f8bc7df0b
 
     if choice == 0:
         track.add_topic()
